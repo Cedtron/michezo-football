@@ -136,7 +136,20 @@ img.animated.pulse {
     padding-bottom: 6rem;
     background: url(../img/bg.png) center center no-repeat;
     background-size: cover;
+    z-index: 2;
+    top:0;
+    height: 88vh;
 }
+.hero-con{
+    
+background: rgba(255, 255, 255, 0.55);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.1px);
+-webkit-backdrop-filter: blur(4.1px);
+border: 1px solid rgba(255, 255, 255, 0.57);
+
+  }
 .hero-about {
     position: relative;
     margin-top: -85px;
@@ -144,6 +157,7 @@ img.animated.pulse {
     padding-bottom: 6rem;
     background: url(../img/hero-2.JPG) center center no-repeat;
     background-size: cover;
+    top: 0em;
 }
 
 .hero-how {
@@ -176,14 +190,54 @@ img.animated.pulse {
 
 .hero-header .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-header .breadcrumb-item+.breadcrumb-item::before {
     color: var(--bs-light);
 }
+/* slider */
+.slider-1 {
+width: 100%;
+height: 80vh;
+margin:0!important;
+    background: url(../img/slider-1.JPG) center center no-repeat;
+    background-size: cover;
+}
+.slider-2 {
+    width: 100%;
+    height: 80vh;
+    margin:0!important;
+    background: url(../img/slider-2.JPG) center center no-repeat;
+    background-size: cover;
+}
+.slider-3 {
+    width: 100%;
+    height: 80vh;
+    margin:0!important;
+    background: url(../img/slider-3.JPG) center center no-repeat;
+    background-size: cover;
+}
+.slider-4 {
+    width: 100%;
+    height: 80vh;
+    margin:0!important;
+    background: url(../img/slider-4.JPG) center center no-repeat;
+    background-size: cover;
+}
+.front {
+    position: absolute;
+      z-index: 10;
+      top: 2em;
+      width:100%;
+      height: 90vh;
+}
 
-
+.behind{
+    position: relative;
+    z-index: 1;
+    top: -85px;
+}
 /*** Feature ***/
 .feature-item::before {
     position: absolute;

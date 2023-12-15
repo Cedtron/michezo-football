@@ -1,3 +1,72 @@
+
+
+function submitForm() {
+    const name = $('#name').val();
+    const email = $('#email').val();
+    const subject = $('#subject').val();
+    const message = $('#message').val();
+
+    $.ajax({
+        type: 'POST',
+        url: 'contact.php', // Replace with the actual path to your server-side script
+        data: {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+        },
+        success: function(response) {
+            // Handle the server's response here
+            if (response === 'success') {
+                // Show Bootstrap alert for successful submission
+                $('#submissionAlert').removeClass('alert-danger').addClass('alert-success').show();
+                // Optionally, clear the form fields
+                $('#contactForm')[0].reset();
+            } else {
+                // Show Bootstrap alert for errors
+                $('#submissionAlert').removeClass('alert-success').addClass('alert-danger').html('<strong>Error:</strong> ' + response).show();
+            }
+        },
+        error: function(error) {
+            // Handle errors (e.g., show an error message)
+            console.error('Error:', error);
+        }
+    });
+}
+
+
+$('#registrationForm').submit(function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Your existing form submission logic
+    const formData = $(this).serialize();
+
+    $.ajax({
+        type: 'POST',
+        url: 'process_registration.php', // Replace with the actual path to your server-side script
+        data: formData,
+        success: function(response) {
+            // Handle the server's response here
+            if (response === 'success') {
+                // Show Bootstrap alert for successful registration
+                $('#registrationAlert').removeClass('alert-danger').addClass('alert-success').show();
+                // Optionally, clear the form fields
+                $('#registrationForm')[0].reset();
+                
+            } else {
+                // Show Bootstrap alert for errors
+                $('#registrationAlert').removeClass('alert-success').addClass('alert-danger').html('<strong>Error:</strong> ' + response).show();
+            }
+        },
+        error: function(error) {
+            // Handle errors (e.g., show an error message)
+            console.error('Error:', error);
+        }
+    });
+});
+
+
+
 (function ($) {
     "use strict";
 

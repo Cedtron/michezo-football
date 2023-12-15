@@ -455,7 +455,12 @@ margin:0!important;
 
 
 /*** Footer ***/
+.footer{
+    background: linear-gradient(3deg, #141414 0%, #5a5858 100%)!important;
+    color:aliceblue;
+}
 .footer .btn.btn-link {
+   
     display: block;
     margin-bottom: 10px;
     padding: 0;
@@ -508,10 +513,12 @@ margin:0!important;
 }
 .bg-sec{background: linear-gradient(3deg, #141414 0%, #5a5858 100%)!important;}
 .nav-logo{width:50px;height: 50px; border-radius: 0.5em;margin: 2px;}
+.nav-item {font-weight: bold;}
 .img-fluids {
     max-width: 80%;
     height: auto;
 }
+.unlist{ list-style: none;}
 /* loader */
 .loaders {
     width: 12px;
